@@ -10,40 +10,12 @@ The methods and scripts were adapted from works by Cabbia et al. (2020) and Vale
 
 ---
 
-## **Repository Structure**
-```plaintext
-MSc_Thesis_Metabolic_Modeling/
-│
-├── README.md                # Overview of the project
-├── LICENSE                  # Licensing information
-├── data/                    # Input datasets
-│   ├── NutriTech_otherdata.xlsx
-│   └── processed_expression_data.txt
-├── code/                    # Analysis scripts
-│   ├── Gene_expression_pipeline.R
-│   ├── Nutritech_data_analysis.ipynb
-│   ├── PCA_GeneExpression.ipynb
-│   ├── Match_GeneSymbol_HUGO.ipynb
-│   ├── GIMME_Model_Building.ipynb
-│   ├── Jaccard_Distance_Analysis.ipynb
-│   ├── FBA_CosineSimilarity_Analysis.ipynb
-│   ├── KMeans_Clustering.ipynb
-│   ├── Pathway_Reaction_Analysis.ipynb
-│   └── helper_functions.py
-├── results/                 # Results and visualizations
-│   ├── PCA_Plots/
-│   ├── Cluster_Results/
-│   ├── FBA_Results/
-│   ├── Pathway_Analysis/
-│   └── Model_Outputs/
-└── docs/                    # Supporting documents
-    └── thesis_summary.pdf
-```
-
 # Data
 **NutriTech_otherdata.xlsx**, Confidential Clinical Data courtesy of the NutriTech Study, Imperial College London, ID: [NCT01684917](https://clinicaltrials.gov/study/NCT01684917?term=NCT01684917&rank=1).
 
 **GSE88794_RAW.tar**, Gene expression data courtesy of GEO, Accession number: [GSE88794](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE88794).
+
+---
 
 # Script files
 **Gene expression processing pipeline.R**: Preprocesses raw gene expression data to make it suitable for downstream analyses. This includes cleaning, normalizing, and transforming the raw data.
@@ -76,31 +48,64 @@ Combines section 8 code, identifies significant clusters, and subsequently finds
 
 # File Structure
 
-1. Gene Expression Files.
+### 1. Gene Expression Files.
 - Gene expression processing pipeline.R: Processes gene expression data to prepare it for further analysis. Input: GSE88794_RAW.tar Output: processed_expression_data.txt, intermediate_data.txt, gene_symbol_expression_data.txt
 
-2. bhbhk
-3. 
-5. Gene expression processing pipeline.R: Processes gene expression data to prepare it for further analysis. Input: GSE88794_RAW.tar Output: processed_expression_data.txt, intermediate_data.txt, gene_symbol_expression_data.txt
-6. NutriTech Data Analysis
-                      * Nutritech_data_analysis+boxplots.ipynb: Analyzes the NutriTech dataset and generates boxplots for visualizing clinical measurements. (Table 1 in report) Input: NutriTech_otherdata.xlsx
-                       Nutritech_data_analysis_Table.ipynb: Creates a table summarizing key NutriTech data points. Input: NutriTech_otherdata_AVG.xlsx
-	3	PCA on Gene Expression Data Set
-                        PCA code_Total Gene Exp data.ipynb: Performs PCA on the gene expression data to create PCA plots, analyze variance, and detect clustering patterns (e.g., T0 vs T120 comparisons) (Figure 1 in report). Input: processed_expression_data.txt
-	4	Gene Expression to Recon Conversion
-	◦	Match_GeneSymbol_HUGO.ipynb: Converts gene expression values from gene symbols to HUGO identifiers to map them onto the Recon3 metabolic model. Input: gene_symbol_expression_data.txt, vmh_gene_convert.txt, recon3_genes.txt Output: combined_recon3_ID_expression_W5D2T0_W5D2T120.txt, filtered_expression_data_W5D3T0.txt, filtered_expression_data_W5D3T120.txt, filtered_expression_data_W5D3T240.txt
-	5	Building Models
-	◦	DW_matlab_code_GIMME.ipynb: Utilizes the outputs from section 4 to construct context-specific models for individual participants. The file columns contain HUGO symbols followed by expression values. The code iterates over these indices for each model to apply the GIMME algorithm with ATP maintenance as the objective function and a threshold of 75%. Input: Section 4 outputs Output: .mat files for each individual sample, organized into folders named based on their ID (W5D2T0, W5D2T120, W5D3T0, W5D3T120, W5D3T240). Each folder contains individual .mat files, representing context-specific models.
-	6	Distance Metrics
-	◦	Jaccard_distance_Heatmap_and_PCA.ipynb: Calculates the Jaccard distance between pairs of context-specific models, then plots the Jaccard scores in a heatmap and uses PCA plots for visualization. (Figure 2-5) Input: Section 5 outputs
-	7	Flux Balance Analysis (FBA), Cosine Similarity, and PCA Plot Analysis
-	◦	FBA_Cosine_Similarity_Analysis_MultipleTimepoints.ipynb: Performs FBA and calculates cosine similarity across various timepoints, generating multiple plots to compare different timepoints, including scatter plots and heatmaps for comprehensive analysis. This allows for an in-depth comparison of metabolic activity across different conditions. Input: Recon3D.mat, model groups from Section 5
-	◦	FBA and PCA Plots of Cosine Similarity.ipynb: This script performs FBA and flux correlation between the context-specific models from section 5. Each group of models (e.g., W5D2T0) is processed by the function load_library, which returns reactions_matrix, metabolite_matrix, gene_matrix, and flx_df. Scatter plot matrices for PCA visualization are generated too. Input: Recon3D.mat, model groups from Section 5 Output: For each group, the reactions_matrix and flx_df are saved: e.g., (flx_df_W5D2T0_.csv, rxns_W5D2T0_.csv)
-	◦	PCA Plots with NutriTech Labels and Participant Tracking.ipynb: Calculates cosine similarity from the flx_df files and makes PCA plots including NutriTech clinical measurements as color gradients and participant labels to track individual clustering across timepoints. Input: NutriTech clinical data, flx_df files for each group (e.g., flx_df_W5D2T0_.csv)
-	◦	PCA Plots with Log-Scale NutriTech Labels as Colour Gradient.ipynb: Improves upon the previous file by using a log scale for the color gradient. Calculates cosine similarity from the flx_df files and makes PCA plots at all timepoints, including NutriTech clinical measurements as color gradients and participant labels (Figure 6A). Input: NutriTech clinical data, flx_df files for each group (e.g., flx_df_W5D2T0_.csv)
-	8	Kmeans Clustering Analysis
-	◦	Specified Kmeans Clustering and NTdata Kruskall Wallis Significance Test.ipynb: Performs K-means clustering on the Cosine Similarity PCA with customizable inputs for principal components, cluster counts, and single NutriTech variables. A Kruskall Wallis significance test was conducted to assess significant differences between clusters using specified NutriTech data. The script provides p-values, cluster plots, and participant cluster assignments. (Figure 6B). Input: NutriTech_otherdata_AVG.xlsx, flx_df files for each group (e.g., flx_df_W5D2T0_.csv)
-	◦	Significance Analysis of Kmeans Clusters Across All Data Points.ipynb: Performs K-means clustering on the Cosine Similarity PCA with customizable inputs for principal components, plots, cluster counts, and multiple NutriTech variables. A Kruskall Wallis significance test was conducted to assess significant differences between clusters using specified NutriTech data. Generates lists that show the clustering method, File ID, p-value, H-statistic, mean, median, clusters. One list contains all samples + data points and another with only significantly different clusters. Input: NutriTech_otherdata_AVG.xlsx, flx_df files for each group (e.g., flx_df_W5D2T0_.csv) Output: pca_analysis_significant_results.csv, pca_analysis_results_multiple_files.csv
-	9	Pathway and Reaction Analyses
-	◦	Pathway and Reaction Analysis.ipynb: Combines section 8 code, identifies significant clusters, and subsequently finds significantly different reactions between them. Multiple analysis methods can be specified, and plots are generated to visualize the reactions. Lists of reaction information are also provided. (Figure 7-9) Input: Outputs from Section 8
 
+### 2. NutriTech Data Analysis
+* Nutritech_data_analysis+boxplots.ipynb: Analyzes the NutriTech dataset and generates boxplots for visualizing clinical measurements. (Table 1 in report) Input: NutriTech_otherdata.xlsx
+
+* Nutritech_data_analysis_Table.ipynb: Creates a table summarizing key NutriTech data points. Input: NutriTech_otherdata_AVG.xlsx
+
+### 3. PCA on Gene Expression Data Set
+* PCA code_Total Gene Exp data.ipynb: Performs PCA on the gene expression data to create PCA plots, analyze variance, and detect clustering patterns (e.g., T0 vs T120 comparisons) (Figure 1 in report). Input: processed_expression_data.txt
+  
+### 4.  Gene Expression to Recon Conversion
+* Match_GeneSymbol_HUGO.ipynb: Converts gene expression values from gene symbols to HUGO identifiers to map them onto the Recon3 metabolic model. Input: gene_symbol_expression_data.txt, vmh_gene_convert.txt, recon3_genes.txt Output: combined_recon3_ID_expression_W5D2T0_W5D2T120.txt, filtered_expression_data_W5D3T0.txt, filtered_expression_data_W5D3T120.txt, filtered_expression_data_W5D3T240.txt
+
+### 5. Building Models
+* DW_matlab_code_GIMME.ipynb: Utilizes the outputs from section 4 to construct context-specific models for individual participants. The file columns contain HUGO symbols followed by expression values. The code iterates over these indices for each model to apply the GIMME algorithm with ATP maintenance as the objective function and a threshold of 75%. Input: Section 4 outputs Output: .mat files for each individual sample, organized into folders named based on their ID (W5D2T0, W5D2T120, W5D3T0, W5D3T120, W5D3T240). Each folder contains individual .mat files, representing context-specific models.
+
+### 6. Distance Metrics
+* Jaccard_distance_Heatmap_and_PCA.ipynb: Calculates the Jaccard distance between pairs of context-specific models, then plots the Jaccard scores in a heatmap and uses PCA plots for visualization. (Figure 2-5) Input: Section 5 outputs
+
+### 7. Flux Balance Analysis (FBA), Cosine Similarity, and PCA Plot Analysis
+* FBA_Cosine_Similarity_Analysis_MultipleTimepoints.ipynb: Performs FBA and calculates cosine similarity across various timepoints, generating multiple plots to compare different timepoints, including scatter plots and heatmaps for comprehensive analysis. This allows for an in-depth comparison of metabolic activity across different conditions. Input: Recon3D.mat, model groups from Section 5
+* FBA and PCA Plots of Cosine Similarity.ipynb: This script performs FBA and flux correlation between the context-specific models from section 5. Each group of models (e.g., W5D2T0) is processed by the function load_library, which returns reactions_matrix, metabolite_matrix, gene_matrix, and flx_df. Scatter plot matrices for PCA visualization are generated too. Input: Recon3D.mat, model groups from Section 5 Output: For each group, the reactions_matrix and flx_df are saved: e.g., (flx_df_W5D2T0_.csv, rxns_W5D2T0_.csv)
+* PCA Plots with NutriTech Labels and Participant Tracking.ipynb: Calculates cosine similarity from the flx_df files and makes PCA plots including NutriTech clinical measurements as color gradients and participant labels to track individual clustering across timepoints. Input: NutriTech clinical data, flx_df files for each group (e.g., flx_df_W5D2T0_.csv)
+* PCA Plots with Log-Scale NutriTech Labels as Colour Gradient.ipynb: Improves upon the previous file by using a log scale for the color gradient. Calculates cosine similarity from the flx_df files and makes PCA plots at all timepoints, including NutriTech clinical measurements as color gradients and participant labels (Figure 6A). Input: NutriTech clinical data, flx_df files for each group (e.g., flx_df_W5D2T0_.csv)
+### 8. Kmeans Clustering Analysis
+* Specified Kmeans Clustering and NTdata Kruskall Wallis Significance Test.ipynb: Performs K-means clustering on the Cosine Similarity PCA with customizable inputs for principal components, cluster counts, and single NutriTech variables. A Kruskall Wallis significance test was conducted to assess significant differences between clusters using specified NutriTech data. The script provides p-values, cluster plots, and participant cluster assignments. (Figure 6B). Input: NutriTech_otherdata_AVG.xlsx, flx_df files for each group (e.g., flx_df_W5D2T0_.csv)
+* Significance Analysis of Kmeans Clusters Across All Data Points.ipynb: Performs K-means clustering on the Cosine Similarity PCA with customizable inputs for principal components, plots, cluster counts, and multiple NutriTech variables. A Kruskall Wallis significance test was conducted to assess significant differences between clusters using specified NutriTech data. Generates lists that show the clustering method, File ID, p-value, H-statistic, mean, median, clusters. One list contains all samples + data points and another with only significantly different clusters. Input: NutriTech_otherdata_AVG.xlsx, flx_df files for each group (e.g., flx_df_W5D2T0_.csv) Output: pca_analysis_significant_results.csv, pca_analysis_results_multiple_files.csv
+### 9. Pathway and Reaction Analyses
+* Pathway and Reaction Analysis.ipynb: Combines section 8 code, identifies significant clusters, and subsequently finds significantly different reactions between them. Multiple analysis methods can be specified, and plots are generated to visualize the reactions. Lists of reaction information are also provided. (Figure 7-9) Input: Outputs from Section 8
+
+## **Repository Structure**
+```plaintext
+MSc_Thesis_Metabolic_Modeling/
+│
+├── README.md                # Overview of the project
+├── LICENSE                  # Licensing information
+├── data/                    # Input datasets
+│   ├── NutriTech_otherdata.xlsx
+│   └── processed_expression_data.txt
+├── code/                    # Analysis scripts
+│   ├── Gene_expression_pipeline.R
+│   ├── Nutritech_data_analysis.ipynb
+│   ├── PCA_GeneExpression.ipynb
+│   ├── Match_GeneSymbol_HUGO.ipynb
+│   ├── GIMME_Model_Building.ipynb
+│   ├── Jaccard_Distance_Analysis.ipynb
+│   ├── FBA_CosineSimilarity_Analysis.ipynb
+│   ├── KMeans_Clustering.ipynb
+│   ├── Pathway_Reaction_Analysis.ipynb
+│   └── helper_functions.py
+├── results/                 # Results and visualizations
+│   ├── PCA_Plots/
+│   ├── Cluster_Results/
+│   ├── FBA_Results/
+│   ├── Pathway_Analysis/
+│   └── Model_Outputs/
+└── docs/                    # Supporting documents
+    └── thesis_summary.pdf
+```
