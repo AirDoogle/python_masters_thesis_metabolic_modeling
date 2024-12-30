@@ -18,13 +18,18 @@ The methods and scripts were adapted from works by Cabbia et al. (2020) and Vale
 ---
 
 # Script files
-### gene_expression_processing_pipeline.R
+
+## 1. Gene expression preprocessing
+
+### **gene_expression_processing_pipeline.R**
 
 [Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/01_gene_expression_preprocessing/gene_expression_processing_pipeline.R)
 
 Preprocesses raw gene expression data to make it suitable for downstream analyses. This includes cleaning, normalizing, and transforming the raw data.
 
-### nutritech_data_analysis_boxplots.ipynb
+## 2. Nutritech data analysis
+
+### **nutritech_data_analysis_boxplots.ipynb**
 
 [Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/02_nutritech_data_analysis/nutritech_data_analysis_boxplots.ipynb)
 
@@ -37,11 +42,15 @@ Analyzes the clinical data, generates statistical summaries, and produces visual
 
 Creates a table summarising key clinical data points
 
+## 3. Prinicipal component analysis (PCA) on gene expression dataset
+
 ### pca_code_total_gene_exp_data.ipynb
 
 [Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/03_pca_on_gene_expression_dataset/pca_code_total_gene_exp_data.ipynb)
 
 Computes PCA components, visualizes variance explained by each component, and generates PCA plots of gene data.
+
+## 04. HUGO convert gene symbol
 
 ### match_gene_symbol_hugo.ipynb
 
@@ -49,17 +58,23 @@ Computes PCA components, visualizes variance explained by each component, and ge
 
 Maps gene expression values from raw gene symbols to HUGO gene identifiers, Performs string matching, filters expression data for relevant genes, and prepares data for Recon3 metabolic model integration.
 
+## 05. Model building
+
 ### matlab_code_gimme.ipynb
 
 [Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/05_model_building/matlab_code_gimme.ipynb)
 
 Builds individualized metabolic models using the GIMME algorithm and generates .mat model files for downstream analysis.
 
+## 06. Jaccard score
+
 ### jaccard_distance_heatmap_and_pca.ipynb
 
 [Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/06_jaccard_score/jaccard_distance_heatmap_and_pca.ipynb)
 
 Generates heatmaps and PCA plots to visualize Jaccard distance metrics.
+
+## 07. Flux balance analysis (FBA)
 
 ### fba_pca_cosine_similarity_analysis_multiple_timepoints.ipynb
 
@@ -85,6 +100,8 @@ Integrate participants clinical data as colour gradients with Metabolic models a
 
 improves upon the previous file by using a log scale for the color gradient. Calculates cosine similarity and makes PCA plots at all timepoints, including NutriTech clinical measurements as color gradients and participant labels (Figure 6A).
 
+## 08. K-means clustering
+
 ### specified_kmeans_clustering_and_ntdata_kruskall_wallis_significance_test.ipynb
 
 [Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/08_k-means_clustering/specified_kmeans_clustering_and_ntdata_kruskall_wallis_significance_test.ipynb)
@@ -96,6 +113,8 @@ Performs K-means clustering on the Cosine Similarity PCA with customizable input
 [Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/08_k-means_clustering/significance_analysis_of_kmeans_clusters_across_all_data_points.ipynb)
 
 Performs K-means clustering on the Cosine Similarity PCA with customizable inputs for principal components, plots, cluster counts, and multiple NutriTech variables. A Kruskall Wallis significance test was conducted to assess significant differences between clusters using specified NutriTech data. Generates lists that show the clustering method, File ID, p-value, H-statistic, mean, median, clusters. One list contains all samples + data points and another with only significantly different clusters.
+
+## 09. Pathway and reaction analysis
 
 ### pathway_and_reaction_analysis.ipynb
 
