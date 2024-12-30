@@ -18,32 +18,89 @@ The methods and scripts were adapted from works by Cabbia et al. (2020) and Vale
 ---
 
 # Script files
+### gene_expression_processing_pipeline.R
+
 [Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/01_gene_expression_preprocessing/gene_expression_processing_pipeline.R)
-**Gene expression processing pipeline.R**: Preprocesses raw gene expression data to make it suitable for downstream analyses. This includes cleaning, normalizing, and transforming the raw data.
+
+Preprocesses raw gene expression data to make it suitable for downstream analyses. This includes cleaning, normalizing, and transforming the raw data.
+
+### nutritech_data_analysis_boxplots.ipynb
 
 [Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/02_nutritech_data_analysis/nutritech_data_analysis_boxplots.ipynb)
-**Nutritech_data_analysis+boxplots.ipynb**: Analyzes the clinical data, generates statistical summaries, and produces visual outputs (boxplots, Table 1 in report).
+
+Analyzes the clinical data, generates statistical summaries, and produces visual outputs (boxplots, Table 1 in report).
 
 
-**PCA_code_total_gene_exp_data.ipynb**: Computes PCA components, visualizes variance explained by each component, and generates PCA plots of gene data.
+### nutritech_data_analysis_table.ipynb
 
-**Match_GeneSymbol_HUGO.ipynb**: Maps gene expression values from raw gene symbols to HUGO gene identifiers, Performs string matching, filters expression data for relevant genes, and prepares data for Recon3 metabolic model integration.
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/02_nutritech_data_analysis/nutritech_data_analysis_table.ipynb)
 
-**DW_matlab_code_GIMME.ipynb**: Builds individualized metabolic models using the GIMME algorithm and generates .mat model files for downstream analysis.
+Creates a table summarising key clinical data points
 
-**Jaccard_distance_Heatmap_and_PCA.ipynb** Generates heatmaps and PCA plots to visualize Jaccard distance metrics.
+### pca_code_total_gene_exp_data.ipynb
 
-**FBA_Cosine_Similarity_Analysis_MultipleTimepoints.ipynb**:  Performs FBA and calculates cosine similarity scores for comparison across various timepoints, visualises results with scatter plots and heatmaps.
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/03_pca_on_gene_expression_dataset/pca_code_total_gene_exp_data.ipynb)
 
-**FBA and PCA Plots of Cosine Similarity.ipynb** Integrates FBA with PCA to explore clustering patterns in metabolic fluxes and visualizes results through PCA plots and matrices.
+Computes PCA components, visualizes variance explained by each component, and generates PCA plots of gene data.
 
-**PCA Plots with NutriTech Labels and Participant Tracking.ipynb** Integrate participants clinical data with Metabolic models as labels for PCA plots to visualize participant clustering across timepoints.
+### match_gene_symbol_hugo.ipynb
 
-**Specified Kmeans Clustering and NTdata Kruskall Wallis Significance Test.ipynb**: Performs K-means clustering on the Cosine Similarity PCA with customizable inputs for principal components, cluster counts, and single NutriTech variables. A Kruskall Wallis significance test was conducted to assess significant differences between clusters using specified NutriTech data. The script provides p-values, cluster plots, and participant cluster assignments. (Figure 6B).
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/04_hugo_convert_gene_symbol/match_gene_symbol_hugo.ipynb)
 
-**Significance Analysis of Kmeans Clusters Across All Data Points.ipynb**: Performs K-means clustering on the Cosine Similarity PCA with customizable inputs for principal components, plots, cluster counts, and multiple NutriTech variables. A Kruskall Wallis significance test was conducted to assess significant differences between clusters using specified NutriTech data. Generates lists that show the clustering method, File ID, p-value, H-statistic, mean, median, clusters. One list contains all samples + data points and another with only significantly different clusters.
+Maps gene expression values from raw gene symbols to HUGO gene identifiers, Performs string matching, filters expression data for relevant genes, and prepares data for Recon3 metabolic model integration.
 
-**Pathway and Reaction Analysis.ipynb**
+### matlab_code_gimme.ipynb
+
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/05_model_building/matlab_code_gimme.ipynb)
+
+Builds individualized metabolic models using the GIMME algorithm and generates .mat model files for downstream analysis.
+
+### jaccard_distance_heatmap_and_pca.ipynb
+
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/06_jaccard_score/jaccard_distance_heatmap_and_pca.ipynb)
+
+Generates heatmaps and PCA plots to visualize Jaccard distance metrics.
+
+### fba_pca_cosine_similarity_analysis_multiple_timepoints.ipynb
+
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/07_fba_flux_balance_analysis/fba_pca_cosine_similarity_analysis_multiple_timepoints.ipynb)
+
+Performs FBA and calculates cosine similarity scores for comparison across various timepoints, visualises results with scatter plots and heatmaps.
+
+### fba_results_and_pca_cosine_similarity_analysis.ipynb
+
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/07_fba_flux_balance_analysis/fba_results_and_pca_cosine_similarity_analysis.ipynb)
+
+Integrates FBA with PCA to explore clustering patterns in metabolic fluxes and visualizes results through PCA plots and matrices.
+
+### pca_plots_with_nutritech_labels_and_participant_tracking.ipynb 
+
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/07_fba_flux_balance_analysis/pca_plots_with_nutritech_labels_and_participant_tracking.ipynb)
+
+Integrate participants clinical data as colour gradients with Metabolic models as labels for PCA plots to visualize participant clustering across timepoints.
+
+### pca_plots_with_log-scale_nutritech_labels_as_colour gradient.ipynb
+
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/07_fba_flux_balance_analysis/pca_plots_with_log-scale_nutritech_labels_as_colour%20gradient.ipynb)
+
+improves upon the previous file by using a log scale for the color gradient. Calculates cosine similarity and makes PCA plots at all timepoints, including NutriTech clinical measurements as color gradients and participant labels (Figure 6A).
+
+### specified_kmeans_clustering_and_ntdata_kruskall_wallis_significance_test.ipynb
+
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/08_k-means_clustering/specified_kmeans_clustering_and_ntdata_kruskall_wallis_significance_test.ipynb)
+
+Performs K-means clustering on the Cosine Similarity PCA with customizable inputs for principal components, cluster counts, and single NutriTech variables. A Kruskall Wallis significance test was conducted to assess significant differences between clusters using specified NutriTech data. The script provides p-values, cluster plots, and participant cluster assignments. (Figure 6B).
+
+### significance_analysis_of_kmeans_clusters_across_all_data_points.ipynb
+
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/08_k-means_clustering/significance_analysis_of_kmeans_clusters_across_all_data_points.ipynb)
+
+Performs K-means clustering on the Cosine Similarity PCA with customizable inputs for principal components, plots, cluster counts, and multiple NutriTech variables. A Kruskall Wallis significance test was conducted to assess significant differences between clusters using specified NutriTech data. Generates lists that show the clustering method, File ID, p-value, H-statistic, mean, median, clusters. One list contains all samples + data points and another with only significantly different clusters.
+
+### pathway_and_reaction_analysis.ipynb
+
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/09_pathway_and_reaction_analyses/pathway_and_reaction_analysis.ipynb)
+
 Combines section 8 code, identifies significant clusters, and subsequently finds significantly different reactions between them. Multiple analysis methods can be specified, and plots are generated to visualize the reactions. Lists of reaction information are also provided. (Figure 7-9).
 
 
