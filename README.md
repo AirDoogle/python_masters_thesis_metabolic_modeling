@@ -18,8 +18,10 @@ The methods and scripts were adapted from works by Cabbia et al. (2020) and Vale
 ---
 
 # Script files
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/01_gene_expression_preprocessing/gene_expression_processing_pipeline.R)
 **Gene expression processing pipeline.R**: Preprocesses raw gene expression data to make it suitable for downstream analyses. This includes cleaning, normalizing, and transforming the raw data.
 
+[Github](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/02_nutritech_data_analysis/nutritech_data_analysis_boxplots.ipynb)
 **Nutritech_data_analysis+boxplots.ipynb**: Analyzes the clinical data, generates statistical summaries, and produces visual outputs (boxplots, Table 1 in report).
 
 
