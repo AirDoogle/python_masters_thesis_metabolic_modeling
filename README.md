@@ -1,12 +1,12 @@
-# MSc_Thesis_Metabolic_Modeling
+# MSc_Thesis_Metabolic_Modeling (Python)
 Repository for Python and R scripts, along with results from my MSc thesis in Bioinformatics & Computational Biology (University College Cork, 2024). This project leverages data science methods for metabolic modeling, PCA, clustering and pathway analysis, aiming to uncover biological insights from transcriptomic and clinical datasets.
 
 This project used Python (v3.12.4) and R (v4.3.1) to:
+- Analyze and visualize datasets using key Python libraries such as ```numpy```, ```pandas```,```matplotlib``` and ```seaborn```.
 - Perform gene expression analysis and metabolic model construction.
-- Conduct statistical evaluations and reaction/pathway analyses using numpy and pandas
-- visualisations using matplotlib and seaborn.
+- Conduct statistical evaluations and reaction/pathway analyses.
 - Generate Metabolic models through MATLAB® COBRA Toolbox (v2.24.3), Gurobi Optimizer (v11.0.2), and COBRApy (v0.29.0) in Python.
--  
+
 
 The methods and scripts were adapted from works by Cabbia et al. (2020) and Valenbreder (2022). Below are the file structures, key analyses, and outputs generated during this project.
 
@@ -94,34 +94,3 @@ Performs K-means clustering on the Cosine Similarity PCA with customizable input
 [pathway_and_reaction_analysis.ipynb](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/09_pathway_and_reaction_analyses/pathway_and_reaction_analysis.ipynb)
 
 Combines section 8 code, identifies significant clusters, and subsequently finds significantly different reactions between them. Multiple analysis methods can be specified, and plots are generated to visualize the reactions. Lists of reaction information are also provided. ([Figure 7-9](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/tree/main/results/09_pathway_and_reaction_analyses)).
-
-
-## **Repository Structure**
-```plaintext
-MSc_Thesis_Metabolic_Modeling/
-│
-├── README.md                # Overview of the project
-├── LICENSE                  # Licensing information
-├── data/                    # Input datasets
-│   ├── NutriTech_otherdata.xlsx
-│   └── processed_expression_data.txt
-├── code/                    # Analysis scripts
-│   ├── Gene_expression_pipeline.R
-│   ├── Nutritech_data_analysis.ipynb
-│   ├── PCA_GeneExpression.ipynb
-│   ├── Match_GeneSymbol_HUGO.ipynb
-│   ├── GIMME_Model_Building.ipynb
-│   ├── Jaccard_Distance_Analysis.ipynb
-│   ├── FBA_CosineSimilarity_Analysis.ipynb
-│   ├── KMeans_Clustering.ipynb
-│   ├── Pathway_Reaction_Analysis.ipynb
-│   └── helper_functions.py
-├── results/                 # Results and visualizations
-│   ├── PCA_Plots/
-│   ├── Cluster_Results/
-│   ├── FBA_Results/
-│   ├── Pathway_Analysis/
-│   └── Model_Outputs/
-└── docs/                    # Supporting documents
-    └── thesis_summary.pdf
-```
