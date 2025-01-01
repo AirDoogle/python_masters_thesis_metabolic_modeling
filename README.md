@@ -8,7 +8,7 @@ This project used Python (v3.12.4) and R (v4.3.1) to:
 - Generate Metabolic models through MATLAB® COBRA Toolbox (v2.24.3), Gurobi Optimizer (v11.0.2), and COBRApy (v0.29.0) in Python.
 
 
-The methods and scripts were adapted from works by Cabbia et al. (2020) and Valenbreder (2022). Below are the file structures, key analyses, and outputs generated during this project.
+The methods and scripts were adapted from works by Cabbia et al. (2020) and Valenbreder (2022). Below are the descriptions of the files used with links to relevant figures and tables used in the final report.
 
 ---
 
