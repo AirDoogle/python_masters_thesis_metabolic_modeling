@@ -1,19 +1,27 @@
 # MSc Thesis Metabolic Modeling (Python)
-Repository for Python and R scripts, along with results from my MSc thesis in Bioinformatics & Computational Biology (University College Cork, 2024). Featuring metabolic modeling, statistical analysis,  principal componenet analysis (PCA), k-means clustering, significance & multiple testing, reaction pathway analysis. This project aims to uncover biological insights from gene and clinical datasets.
+
+Repository for Python and R scripts, along with results from my MSc thesis in Bioinformatics & Computational Biology (University College Cork, 2024). Featuring metabolic modeling, statistical analysis,  principal component analysis (PCA), k-means clustering, significance & multiple testing, reaction pathway analysis. 
+The project focused on understanding how overweight and obesity influence metabolic reprogramming in peripheral blood mononuclear cells (PBMCs) and assessing the potential of different postprandial measurements for identifying cardiometabolic disease risks.
 
 This project used Python (v3.12.4) and R (v4.3.1) to:
 - Analyze and visualize datasets using key Python libraries such as ```numpy```, ```pandas```,```sklearn```, ```matplotlib``` and ```seaborn```.
-- Generate metabolic models through MATLAB® COBRA Toolbox (v2.24.3), Gurobi Optimizer (v11.0.2), and COBRApy (v0.29.0) in Python.
+- Generate genome scale metabolic models through MATLAB® COBRA Toolbox (v2.24.3), Gurobi Optimizer (v11.0.2), and COBRApy (v0.29.0) in Python.
 
+The methods and scripts were adapted from works by Cabbia et al. (2020) and Valenbreder (2022). Below are the descriptions of the files in the order they were used with links to relevant figures and tables used in the final report. 
 
-The methods and scripts were adapted from works by Cabbia et al. (2020) and Valenbreder (2022). Below are the descriptions of the files used with links to relevant figures and tables used in the final report.
+---
+
+# Thesis title:    
+"The impact of overweight and obesity on metabolic reprogramming of the
+innate immune system: An evaluation of fasting and postprandial
+measurements for discrimination in cardiometabollic disease risk"
 
 ---
 
 # Data
-**nutritech_otherdata.xlsx**, Confidential Clinical Data courtesy of the NutriTech Study, Imperial College London, ID: [NCT01684917](https://clinicaltrials.gov/study/NCT01684917?term=NCT01684917&rank=1).
-
 **GSE88794_RAW.tar**, Gene expression data courtesy of GEO, Accession number: [GSE88794](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE88794).
+
+**nutritech_otherdata.xlsx**, Confidential Clinical Data courtesy of the NutriTech Study, Imperial College London, ID: [NCT01684917](https://clinicaltrials.gov/study/NCT01684917?term=NCT01684917&rank=1).
 
 ---
 
