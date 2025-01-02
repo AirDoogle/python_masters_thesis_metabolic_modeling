@@ -94,9 +94,9 @@ Used ```numpy```, ```pandas```,```sklearn```, ```matplotlib``` and ```seaborn```
 
 ---
 
-**Figure 9.** Number of significantly different reactions per pathway following Benjamini-Hochberg correction in a comparison of the k-means clusters 1 vs 2 in PBMC context-specific metabolic models.
+**Figure 9.** Number of significantly different reactions per metabolic pathway following Benjamini-Hochberg correction in a comparison of the k-means clusters 1 vs 2 in PBMC context-specific metabolic models.
 <div align="center">  
-    Barchart of k-means cluster 1 vs cluster 2: Number of signicant reactions per pathway.
+    Barchart of k-means cluster 1 vs cluster 2: Number of signicant reactions per metabolic pathway.
 </div>
 
 ![detailed Figure 9](https://github.com/AirDoogle/python_masters_thesis_metabolic_modeling/blob/main/results/09_pathway_and_reaction_analyses/figure_9_detailed_mmt_t240_significant_reactions_per_pathway_kmeans_clusters_1_vs_2.png) 
