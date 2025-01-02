@@ -2,7 +2,7 @@
 Repository for Python and R scripts, along with results from my MSc thesis in Bioinformatics & Computational Biology (University College Cork, 2024). Featuring metabolic modeling, statistical analysis,  principal componenet analysis (PCA), k-means clustering, significance & multiple testing, reaction pathway analysis, aiming to uncover biological insights from gene and clinical datasets.
 
 This project used Python (v3.12.4) and R (v4.3.1) to:
-- Analyze and visualize datasets using key Python libraries such as ```numpy```, ```pandas```,```matplotlib``` and ```seaborn```.
+- Analyze and visualize datasets using key Python libraries such as ```numpy```, ```pandas```,```sklearn```, ```matplotlib``` and ```seaborn```.
 - Perform gene expression analysis and metabolic model construction.
 - Conduct statistical evaluations and reaction/pathway analyses.
 - Generate Metabolic models through MATLAB® COBRA Toolbox (v2.24.3), Gurobi Optimizer (v11.0.2), and COBRApy (v0.29.0) in Python.
@@ -30,8 +30,7 @@ Preprocesses raw gene expression data to make it suitable for downstream analyse
 
 [nutritech_data_analysis_boxplots.ipynb](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/02_nutritech_data_analysis/nutritech_data_analysis_boxplots.ipynb)
 
-Used **Pandas**, **Matplotlib** and **Seaborn** to analyze the NutriTech clinical dataset. Generates statistical summaries and visualizations of the clinical data with bar charts, scatterplots, heatmaps and 3x10 matrices of boxplots.
-
+Used ```Pandas```, ```Matplotlib``` and ```Seaborn``` to analyze the NutriTech clinical dataset. Generates statistical summaries and visualizations of the clinical data with bar charts, scatterplots, heatmaps and 3x10 matrices of boxplots.
 
 [nutritech_data_analysis_table.ipynb](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/02_nutritech_data_analysis/nutritech_data_analysis_table.ipynb)
 
@@ -41,7 +40,7 @@ Creates a table summarising key NutriTech clinical data points ([Table 1.](https
 
 [pca_code_total_gene_exp_data.ipynb](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/03_pca_on_gene_expression_dataset/pca_code_total_gene_exp_data.ipynb)
 
-Performs PCA on gene expression data, creating PCA plots, visualizing variance explained by each component, and detecting clustering patterns, e.g., T0 vs T120 comparisons ([Figure 1 in report](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/results/03_pca_on_gene_expression_dataset/figure_1_pca_results_comparison_of_participants_gene_expression_data_coloured_by_time_of_ogtt_and_intervention_status.png)).
+Used ```sklearn```, ```Pandas```, ```Matplotlib``` and ```Seaborn``` to perform PCA on gene expression data, creating PCA plots, visualizing variance explained by each component, and detecting clustering patterns. Compare Gene expression at T0 vs T120, Before vs After Diet intervention, MMT vs OGTT ([Figure 1 in report](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/results/03_pca_on_gene_expression_dataset/figure_1_pca_results_comparison_of_participants_gene_expression_data_coloured_by_time_of_ogtt_and_intervention_status.png)).
 
 ## 04. HUGO convert gene symbol
 
