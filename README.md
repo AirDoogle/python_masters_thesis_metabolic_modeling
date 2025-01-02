@@ -3,7 +3,7 @@ Repository for Python and R scripts, along with results from my MSc thesis in Bi
 
 This project used Python (v3.12.4) and R (v4.3.1) to:
 - Analyze and visualize datasets using key Python libraries such as ```numpy```, ```pandas```,```sklearn```, ```matplotlib``` and ```seaborn```.
-- Generate Metabolic models through MATLAB® COBRA Toolbox (v2.24.3), Gurobi Optimizer (v11.0.2), and COBRApy (v0.29.0) in Python.
+- Generate metabolic models through MATLAB® COBRA Toolbox (v2.24.3), Gurobi Optimizer (v11.0.2), and COBRApy (v0.29.0) in Python.
 
 
 The methods and scripts were adapted from works by Cabbia et al. (2020) and Valenbreder (2022). Below are the descriptions of the files used with links to relevant figures and tables used in the final report.
@@ -56,7 +56,7 @@ Utilizes the outputs from section 4 to construct context-specific models for ind
 
 [jaccard_distance_heatmap_and_pca.ipynb](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/06_jaccard_score/jaccard_distance_heatmap_and_pca.ipynb)
 
-Performs string matching to convert gene expression values from gene symbols to HUGO identifiers, mapping them onto the Recon3 metabolic model ([Figure 2-5](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/tree/main/results/06_jaccard_score)).
+Calculates the Jaccard distance between pairs of context-specific models, then plots the Jaccard scores in a heatmap and uses PCA plots for visualization. ([Figure 2-5](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/tree/main/results/06_jaccard_score)).
 
 ## 07. Flux balance analysis (FBA)
 
