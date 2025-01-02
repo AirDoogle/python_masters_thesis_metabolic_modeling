@@ -90,7 +90,7 @@ Performs K-means clustering on the Cosine Similarity PCA with customizable input
 
 [pathway_and_reaction_analysis.ipynb](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/09_pathway_and_reaction_analyses/pathway_and_reaction_analysis.ipynb)
 
-Combines section 8 code, identifies significant clusters, and subsequently finds significantly different reactions between them. Multiple testing methods can be specified (Bonferroni, Benjamini-Hochberg, Benjamini-Yekutiell), and plots are generated to visualize the reactions. Lists of reaction information are also provided ([Figure 7-9](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/tree/main/results/09_pathway_and_reaction_analyses)).
+Used ```numpy```, ```pandas```,```sklearn```, ```matplotlib``` and ```seaborn```. Combines section 8 code, identifies significant clusters, and subsequently finds significantly different reactions between them. Multiple testing methods can be specified (Bonferroni, Benjamini-Hochberg, Benjamini-Yekutiell), and plots are generated to visualize the reactions. Lists of reaction information are also provided ([Figure 7-9](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/tree/main/results/09_pathway_and_reaction_analyses)).
 
 ---
 
