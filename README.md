@@ -3,8 +3,6 @@ Repository for Python and R scripts, along with results from my MSc thesis in Bi
 
 This project used Python (v3.12.4) and R (v4.3.1) to:
 - Analyze and visualize datasets using key Python libraries such as ```numpy```, ```pandas```,```sklearn```, ```matplotlib``` and ```seaborn```.
-- Perform gene expression analysis and metabolic model construction.
-- Conduct statistical evaluations and reaction/pathway analyses.
 - Generate Metabolic models through MATLAB® COBRA Toolbox (v2.24.3), Gurobi Optimizer (v11.0.2), and COBRApy (v0.29.0) in Python.
 
 
