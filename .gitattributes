@@ -1,1 +1,4 @@
+code/01_gene_expression_preprocessing/gene_expression_processing_pipeline.R linguist-language=R
 code/03_pca_on_gene_expression_dataset/pca_code_total_gene_exp_data.html linguist-generated
+code/09_pathway_and_reaction_analyses linguist-generated
+
