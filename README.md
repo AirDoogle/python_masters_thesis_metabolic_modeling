@@ -1,5 +1,5 @@
-# MSc_Thesis_Metabolic_Modeling (Python)
-Repository for Python and R scripts, along with results from my MSc thesis in Bioinformatics & Computational Biology (University College Cork, 2024). This project leverages data science methods for metabolic modeling, PCA, clustering and pathway analysis, aiming to uncover biological insights from transcriptomic and clinical datasets.
+# MSc Thesis Metabolic Modeling (Python)
+Repository for Python and R scripts, along with results from my MSc thesis in Bioinformatics & Computational Biology (University College Cork, 2024). Featuring metabolic modeling, statistical analysis,  principal componenet analysis (PCA), k-means clustering, significance & multiple testing, reaction pathway analysis, aiming to uncover biological insights from gene and clinical datasets.
 
 This project used Python (v3.12.4) and R (v4.3.1) to:
 - Analyze and visualize datasets using key Python libraries such as ```numpy```, ```pandas```,```matplotlib``` and ```seaborn```.
@@ -93,4 +93,4 @@ Performs K-means clustering on the Cosine Similarity PCA with customizable input
 
 [pathway_and_reaction_analysis.ipynb](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/blob/main/code/09_pathway_and_reaction_analyses/pathway_and_reaction_analysis.ipynb)
 
-Combines section 8 code, identifies significant clusters, and subsequently finds significantly different reactions between them. Multiple analysis methods can be specified, and plots are generated to visualize the reactions. Lists of reaction information are also provided. ([Figure 7-9](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/tree/main/results/09_pathway_and_reaction_analyses)).
+Combines section 8 code, identifies significant clusters, and subsequently finds significantly different reactions between them. Multiple testing methods can be specified (Bonferroni, Benjamini-Hochberg, Benjamini-Yekutiell), and plots are generated to visualize the reactions. Lists of reaction information are also provided. ([Figure 7-9](https://github.com/AirDoogle/MSc_Thesis_Metabolic_Modeling/tree/main/results/09_pathway_and_reaction_analyses)).
