@@ -1,5 +1,5 @@
 # MSc Thesis Metabolic Modeling (Python)
-Repository for Python and R scripts, along with results from my MSc thesis in Bioinformatics & Computational Biology (University College Cork, 2024). Featuring metabolic modeling, statistical analysis,  principal componenet analysis (PCA), k-means clustering, significance & multiple testing, reaction pathway analysis, aiming to uncover biological insights from gene and clinical datasets.
+Repository for Python and R scripts, along with results from my MSc thesis in Bioinformatics & Computational Biology (University College Cork, 2024). Featuring metabolic modeling, statistical analysis,  principal componenet analysis (PCA), k-means clustering, significance & multiple testing, reaction pathway analysis. This project aims to uncover biological insights from gene and clinical datasets.
 
 This project used Python (v3.12.4) and R (v4.3.1) to:
 - Analyze and visualize datasets using key Python libraries such as ```numpy```, ```pandas```,```sklearn```, ```matplotlib``` and ```seaborn```.
