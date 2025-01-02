@@ -1,4 +1,5 @@
 code/01_gene_expression_preprocessing/gene_expression_processing_pipeline.R linguist-language=R
 code/03_pca_on_gene_expression_dataset/pca_code_total_gene_exp_data.html linguist-generated
-code/09_pathway_and_reaction_analyses linguist-generated
+code/09_pathway_and_reaction_analyses/pathway_and_reaction_analysis.ipynb linguist-generated
+code/07_fba_flux_balance_analysis/pca_plots_with_nutritech_labels_and_participant_tracking.ipynb
 
